@@ -1,3 +1,5 @@
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 # File Timeline Generator
 
 A Forensics Python tool that parses disk images or directories to create comprehensive CSV timeline reports of file operations (creation, modification, and access times).
