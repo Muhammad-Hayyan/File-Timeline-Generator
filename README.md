@@ -1,6 +1,6 @@
 # File Timeline Generator
 
-A Python tool that parses disk images or directories to create comprehensive CSV timeline reports of file operations (creation, modification, and access times).
+A Forensics Python tool that parses disk images or directories to create comprehensive CSV timeline reports of file operations (creation, modification, and access times).
 
 ## Features
 
@@ -24,14 +24,14 @@ A Python tool that parses disk images or directories to create comprehensive CSV
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/file-timeline-generator.git
-   cd file-timeline-generator
+   git clone https://github.com/Muhammad-Hayyan/File-Timeline-Generator.git
+   cd File-Timeline-Generator
    ```
 
 2. Install the additional dependencies:
-```
-pip install pytsk3 pyewf
-```
+   ```
+   pip install pytsk3 pyewf
+   ```
 
 ## Usage
 
@@ -69,11 +69,12 @@ The tool generates a CSV file with the following columns:
 - **name**: Filename
 - **size**: File size in bytes
 
-**This tool currently doesn't support AFF, VHD, VMDK and VDI Disk image formats. I will Upload an advance version of this tool soon.**
-
----
-
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+**This tool currently doesn't support AFF, VHD, VMDK and VDI Disk image formats. I will Upload an advance version of this tool soon.**
+
 
