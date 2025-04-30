@@ -17,7 +17,7 @@ Arguments:
 Example usage for analyzing folder:
     python timeline-generator.py --path "/path/to/folder" --output timeline.csv --recursive
 
-Example usage for analyzing folder:
+Example usage for analyzing Disk Image:
     python timeline-generator.py --path "/path/to/image.E01" --output timeline.csv --disk-image
 """
 
