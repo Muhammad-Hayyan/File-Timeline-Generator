@@ -37,21 +37,22 @@ except ImportError:
     DISK_IMAGE_SUPPORT = False
 
 #Class that handles EWF image files
-class EWFImgInfo(pytsk3.Img_Info):
-    
-    def __init__(self, ewf_handle):
-        self.ewf_handle = ewf_handle
-        super(EWFImgInfo, self).__init__(url="", type=pytsk3.TSK_IMG_TYPE_EXTERNAL)
+if DISK_IMAGE_SUPPORT:
+    class EWFImgInfo(pytsk3.Img_Info):
+        
+        def __init__(self, ewf_handle):
+            self.ewf_handle = ewf_handle
+            super(EWFImgInfo, self).__init__(url="", type=pytsk3.TSK_IMG_TYPE_EXTERNAL)
 
-    def close(self):
-        self.ewf_handle.close()
+        def close(self):
+            self.ewf_handle.close()
 
-    def read(self, offset, size):
-        self.ewf_handle.seek(offset)
-        return self.ewf_handle.read(size)
+        def read(self, offset, size):
+            self.ewf_handle.seek(offset)
+            return self.ewf_handle.read(size)
 
-    def get_size(self):
-        return self.ewf_handle.get_media_size()
+        def get_size(self):
+            return self.ewf_handle.get_media_size()
 
 #Class representing a timeline entry for a file
 class TimelineEntry:
