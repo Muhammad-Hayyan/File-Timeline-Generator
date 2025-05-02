@@ -26,6 +26,7 @@ import csv
 import argparse
 import datetime
 import sys
+import re
 from typing import List, Dict, Any, Tuple
 
 #Optional imports for disk image parsing
@@ -77,6 +78,8 @@ class TimelineEntry:
             'deleted': self.deleted
         }
 
+def remove_non_ascii(text):
+    return re.sub(r'[^\x00-\x7F]+', '', text)
 
 def format_timestamp(timestamp) -> str:
     if timestamp is None:
@@ -226,6 +229,10 @@ def write_timeline_to_csv(timeline_entries: List[TimelineEntry], output_file: st
             writer.writeheader()
 
             for entry in timeline_entries:
+
+                entry.path=remove_non_ascii(entry.path)
+                entry.name=remove_non_ascii(entry.name)
+
                 if entry.created:
                     writer.writerow({
                         'timestamp': format_timestamp(entry.created),
