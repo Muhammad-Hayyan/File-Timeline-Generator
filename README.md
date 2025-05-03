@@ -49,12 +49,13 @@ python file_timeline.py --path "PATH" [--output "OUTPUT"] [--disk-image] [--recu
 - `--output OUTPUT`: Output CSV file (default: timeline.csv)
 - `--disk-image`: Specify if the path is a disk image
 - `--recursive`: Recursively scan folder contents
+- `--date-sort`: Sort events by timestamp (optional)
 
 ### Examples
 
 Analyze a folder:
 ```
-python timeline-generator.py --path "/path/to/folder" --output "timeline.csv" --recursive
+python timeline-generator.py --path "/path/to/folder" --output "timeline.csv" --recursive --date-sort
 ```
 Analyze a disk image:
 ```
@@ -66,7 +67,7 @@ python timeline-generator.py --path "/path/to/image.E01" --output "disk_timeline
 The tool generates a CSV file with the following columns:
 
 - **timestamp**: Date and time of the event in YYYY-MM-DD HH:MM:SS format
-- **action**: Type of action (created, modified, accessed, deleted)
+- **action**: Type of action ( crtime: created, mtime: modified, atime: accessed)
 - **path**: Directory path containing the file
 - **name**: Filename
 - **size**: File size in bytes
